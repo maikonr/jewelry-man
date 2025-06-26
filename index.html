@@ -8,29 +8,101 @@
     body {
       margin: 0;
       font-family: 'Segoe UI', sans-serif;
-      background-color: #f8f8f8;
+      background-color: #f4f4f4;
       color: #333;
     }
+
     header {
       background-color: #111;
       color: white;
-      padding: 2rem;
       text-align: center;
+      padding: 2rem 1rem;
     }
+
+    header h1 {
+      margin: 0;
+      font-size: 2.5rem;
+    }
+
+    header p {
+      font-size: 1.2rem;
+      margin-top: 0.5rem;
+    }
+
     main {
-      padding: 2rem;
-      max-width: 800px;
+      max-width: 1000px;
       margin: auto;
+      padding: 2rem;
     }
-    section {
-      margin-bottom: 2rem;
+
+    .section {
+      margin-bottom: 2.5rem;
     }
-    .item {
-      background: white;
-      padding: 1rem;
-      margin: 1rem 0;
+
+    .section h2 {
+      font-size: 1.8rem;
+      border-bottom: 2px solid #444;
+      padding-bottom: 0.5rem;
+    }
+
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.5rem;
+      margin-top: 1rem;
+    }
+
+    .gallery img {
+      width: 100%;
+      height: auto;
       border-radius: 8px;
       box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+
+    .contact {
+      text-align: center;
+      margin-top: 3rem;
+    }
+
+    .contact a {
+      display: inline-block;
+      background-color: #111;
+      color: white;
+      padding: 0.8rem 1.5rem;
+      border-radius: 30px;
+      text-decoration: none;
+      font-weight: bold;
+      transition: background 0.3s;
+    }
+
+    .contact a:hover {
+      background-color: #333;
+    }
+
+    .social {
+      text-align: center;
+      margin-top: 2rem;
+    }
+
+    .social a {
+      margin: 0 10px;
+      text-decoration: none;
+      color: #111;
+      font-size: 1.4rem;
+    }
+
+    footer {
+      text-align: center;
+      padding: 1rem;
+      background: #222;
+      color: white;
+      margin-top: 2rem;
+    }
+
+    @media (max-width: 600px) {
+      header h1 {
+        font-size: 2rem;
+      }
     }
   </style>
 </head>
@@ -38,28 +110,58 @@
 
   <header>
     <h1>Men's Jewelry</h1>
-    <p>Stylish and modern jewelry for men</p>
+    <p>Style, confidence, and modern accessories</p>
   </header>
 
   <main>
-    <section>
+
+    <section class="section">
+      <h2>Why Men's Jewelry Matters</h2>
+      <p>
+        In today's world, personal style is more than appearance — it's self-expression. Men's jewelry
+        brings personality, strength, and elegance to your look. Whether you're at work, at an event, or just out with friends,
+        a simple bracelet, ring, or necklace can make a powerful statement. Keeping up with fashion trends shows confidence and individuality.
+      </p>
+    </section>
+
+    <section class="section">
       <h2>Bracelets</h2>
-      <div class="item">Leather Bracelet - Classic design</div>
-      <div class="item">Beaded Bracelet - Natural stones</div>
+      <div class="gallery">
+        <img src="https://images.unsplash.com/photo-1600185365926-3c9a17f7bb63?auto=format&fit=crop&w=800&q=80" alt="Leather Bracelet">
+        <img src="https://images.unsplash.com/photo-1590080876799-5c40d5749b0c?auto=format&fit=crop&w=800&q=80" alt="Beaded Bracelet">
+      </div>
     </section>
 
-    <section>
+    <section class="section">
       <h2>Rings</h2>
-      <div class="item">Silver Ring - Minimalist style</div>
-      <div class="item">Gold Ring - Elegant and bold</div>
+      <div class="gallery">
+        <img src="https://images.unsplash.com/photo-1585664715041-46cd5dfc3a3d?auto=format&fit=crop&w=800&q=80" alt="Silver Ring">
+        <img src="https://images.unsplash.com/photo-1602810316591-5c6e5a6c24c0?auto=format&fit=crop&w=800&q=80" alt="Gold Ring">
+      </div>
     </section>
 
-    <section>
+    <section class="section">
       <h2>Necklaces</h2>
-      <div class="item">Chain Necklace - Stainless steel</div>
-      <div class="item">Pendant Necklace - With engraved symbols</div>
+      <div class="gallery">
+        <img src="https://images.unsplash.com/photo-1618354691547-38909396f283?auto=format&fit=crop&w=800&q=80" alt="Chain Necklace">
+        <img src="https://images.unsplash.com/photo-1621592482710-78e377cf294f?auto=format&fit=crop&w=800&q=80" alt="Pendant Necklace">
+      </div>
     </section>
+
+    <div class="contact">
+      <a href="mailto:contact@example.com">Contact Us</a>
+    </div>
+
+    <div class="social">
+      <a href="https://instagram.com/seu_instagram" target="_blank">📷 Instagram</a>
+      <a href="https://wa.me/5599999999999" target="_blank">💬 WhatsApp</a>
+    </div>
+
   </main>
+
+  <footer>
+    &copy; 2025 Men's Jewelry. All rights reserved.
+  </footer>
 
 </body>
 </html>

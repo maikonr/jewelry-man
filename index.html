@@ -5,19 +5,31 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Men's Jewelry</title>
   <style>
+    html {
+      scroll-behavior: smooth;
+    }
+
     body {
       margin: 0;
+      margin-top: 70px; /* espaço para o navbar fixo */
       font-family: 'Segoe UI', sans-serif;
       background: #f4f4f4;
       color: #333;
     }
 
     nav {
-      background: #111;
+      position: fixed;
+      top: 0;
+      width: 100%;
+      z-index: 1000;
       padding: 1rem;
       display: flex;
       justify-content: center;
       gap: 2rem;
+      background: rgba(17, 17, 17, 0.7);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px); /* Safari support */
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
     }
 
     nav a {
@@ -28,6 +40,13 @@
 
     nav a:hover {
       text-decoration: underline;
+    }
+
+    .banner {
+      width: 100%;
+      max-height: 500px;
+      object-fit: cover;
+      display: block;
     }
 
     header {
@@ -61,8 +80,24 @@
 
     .gallery img {
       width: 100%;
+      height: 300px;
+      object-fit: cover;
       border-radius: 8px;
-      box-shadow: 0 3px 6px rgba(0,0,0,0.1);
+      opacity: 0;
+      transform: translateY(20px);
+      animation: fadeInUp 0.8s ease forwards;
+    }
+
+    .gallery img:nth-child(1) { animation-delay: 0.1s; }
+    .gallery img:nth-child(2) { animation-delay: 0.2s; }
+    .gallery img:nth-child(3) { animation-delay: 0.3s; }
+    .gallery img:nth-child(4) { animation-delay: 0.4s; }
+
+    @keyframes fadeInUp {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
     }
 
     .contact a {
@@ -78,6 +113,28 @@
 
     .contact a:hover {
       background: #444;
+    }
+
+    form input,
+    form textarea {
+      padding: 0.7rem;
+      font-size: 1rem;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+    }
+
+    form button {
+      padding: 0.7rem;
+      font-size: 1rem;
+      background-color: #111;
+      color: white;
+      border: none;
+      border-radius: 25px;
+      cursor: pointer;
+    }
+
+    form button:hover {
+      background-color: #333;
     }
 
     footer {
@@ -97,45 +154,58 @@
     <a href="#contact">Contact</a>
   </nav>
 
+  <img src="images/banner.png" alt="Men's Jewelry Banner" class="banner" />
+
   <header id="home">
     <h1>Men's Jewelry</h1>
     <p>Stay updated. Stay stylish. Jewelry designed for men.</p>
   </header>
-    <p>
-        In today’s world, men’s jewelry has gone far beyond tradition—it's a statement of identity, confidence, and style. From bold rings to sleek chains and elegant bracelets, accessories are becoming essential elements in a modern man’s wardrobe.
-        Jewelry allows men to express their personality in subtle or striking ways. Whether it’s a classic signet ring passed down through generations, or a minimalist silver bracelet that completes a sharp look, these pieces tell stories without words. They reflect status, heritage, and individual taste.
+
+  <section>
+    <p style="font-size: 1.2rem; font-family: Georgia, serif; line-height: 1.8; text-align: justify;">
+      In today’s world, men’s jewelry has gone far beyond tradition — it's a statement of identity, confidence, and style. 
+      From bold rings to sleek chains and elegant bracelets, accessories are becoming essential elements in a modern man’s wardrobe.
+      Jewelry allows men to express their personality in subtle or striking ways.
     </p>
+  </section>
 
   <section id="sale">
     <h2>For Sale</h2>
     <p>Discover our collection of modern men's accessories:</p>
     <div class="gallery">
-      <img src="https://images.unsplash.com/photo-1590080876799-5c40d5749b0c?auto=format&fit=crop&w=600&q=80" alt="Bracelet" />
-      <img src="https://images.unsplash.com/photo-1585664715041-46cd5dfc3a3d?auto=format&fit=crop&w=600&q=80" alt="Silver Ring" />
-      <img src="https://images.unsplash.com/photo-1602810316591-5c6e5a6c24c0?auto=format&fit=crop&w=600&q=80" alt="Gold Ring" />
-      <img src="https://images.unsplash.com/photo-1618354691547-38909396f283?auto=format&fit=crop&w=600&q=80" alt="Necklace" />
+      <img src="images/anel.png" alt="Ring" />
+      <img src="images/pulseira.png" alt="Bracelet" />
+      <img src="images/necklace.png" alt="Necklace" />
     </div>
   </section>
 
   <section id="about">
     <h2>About</h2>
-    <p>
-    With over five decades of heritage, our brand was born in the heart of Virginia, USA, in 1973. What began as a small family-run workshop dedicated to crafting timeless men's rings and cufflinks quickly evolved into a symbol of bold masculine elegance across generations. Today, we proudly carry our legacy forward with locations in both the United States and Brazil.
-    At our core, we believe jewelry is more than ornament—it's a reflection of character, history, and style. Each piece in our collection is designed with precision, combining tradition and contemporary fashion to empower men to express themselves authentically.
-    In 2015, we opened our São Paulo showroom, blending American craftsmanship with Brazilian sophistication. From minimalist necklaces to statement rings and leather-metal hybrids, our creations are forged to inspire confidence, individuality, and timeless appeal.
-    Whether you're honoring a milestone, enhancing your daily style, or discovering your signature piece—welcome to a tradition of masculine excellence that keeps evolving.
-
+    <p style="font-size: 1.2rem; font-family: Georgia, serif; line-height: 1.8; text-align: justify;">
+      Our brand was born in Virginia in 1973. What began as a small family workshop is now a global symbol of masculine style. 
+      In 2015, we expanded to São Paulo, blending American precision with Brazilian flair.
+      Every piece—be it a chain, ring, or bracelet—is crafted to reflect heritage, confidence, and individuality.
     </p>
   </section>
 
   <section id="contact">
     <h2>Contact</h2>
+    <img src="images/contactus.png" alt="Contact Banner" style="width: 100%; border-radius: 8px; margin-bottom: 2rem;" />
+
     <p>Want to connect? Follow or reach us below:</p>
     <div class="contact">
       <a href="mailto:contact@example.com">📧 Email</a>
       <a href="https://instagram.com/seu_instagram" target="_blank">📷 Instagram</a>
       <a href="https://wa.me/5599999999999" target="_blank">💬 WhatsApp</a>
     </div>
+
+    <h3 style="margin-top: 3rem;">Send us a message</h3>
+    <form style="margin-top: 1rem; display: flex; flex-direction: column; gap: 1rem;">
+      <input type="text" name="title" placeholder="Your name or subject" required />
+      <input type="email" name="email" placeholder="Your email" required />
+      <textarea name="message" rows="5" placeholder="Your message..." required></textarea>
+      <button type="submit">📩 Send Message</button>
+    </form>
   </section>
 
   <footer>
